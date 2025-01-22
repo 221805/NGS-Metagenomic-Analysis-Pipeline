@@ -1,0 +1,480 @@
+# Installing Packages 
+root@Bhavishyagowda:~# !wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+--2025-01-19 09:36:12--  https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+Resolving repo.anaconda.com (repo.anaconda.com)... 104.16.32.241, 104.16.191.158, 2606:4700:9c63:2c97:4ac6:40a:6810:20f1
+Connecting to repo.anaconda.com (repo.anaconda.com)|104.16.32.241|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 147784736 (141M) [application/octet-stream]
+Saving to: ‘Miniconda3-latest-Linux-x86_64.sh.1’
+
+Miniconda3-latest-Linux-x86_64.sh.1      3%[=>                                                                           ]   4.92M  16.0KB/s    in 3m 17s
+
+2025-01-19 09:39:30 (25.6 KB/s) - Read error at byte 5159213/147784736 (Connection reset by peer). Retrying.
+
+--2025-01-19 09:39:31--  (try: 2)  https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+Connecting to repo.anaconda.com (repo.anaconda.com)|104.16.32.241|:443... connected.
+HTTP request sent, awaiting response... 206 Partial Content
+Length: 147784736 (141M), 142625523 (136M) remaining [application/octet-stream]
+Saving to: ‘Miniconda3-latest-Linux-x86_64.sh.1’
+
+Miniconda3-latest-Linux-x86_64.sh.1    100%[++==========================================================================>] 140.94M  1.33MB/s    in 1m 49s
+
+2025-01-19 09:41:21 (1.25 MB/s) - ‘Miniconda3-latest-Linux-x86_64.sh.1’ saved [147784736/147784736]
+
+--2025-01-19 09:41:21--  https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+Reusing existing connection to repo.anaconda.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 147784736 (141M) [application/octet-stream]
+Saving to: ‘Miniconda3-latest-Linux-x86_64.sh.2’
+
+Miniconda3-latest-Linux-x86_64.sh.2     12%[========>                                                                    ]  17.65M  1.15MB/s    in 17s
+
+2025-01-19 09:41:38 (1.03 MB/s) - Connection closed at byte 18512173. Retrying.
+
+--2025-01-19 09:41:39--  (try: 2)  https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+Connecting to repo.anaconda.com (repo.anaconda.com)|104.16.32.241|:443... connected.
+HTTP request sent, awaiting response... 206 Partial Content
+Length: 147784736 (141M), 129272563 (123M) remaining [application/octet-stream]
+Saving to: ‘Miniconda3-latest-Linux-x86_64.sh.2’
+
+Miniconda3-latest-Linux-x86_64.sh.2    100%[+++++++++===================================================================>] 140.94M  2.59MB/s    in 56s
+
+2025-01-19 09:45:50 (2.18 MB/s) - ‘Miniconda3-latest-Linux-x86_64.sh.2’ saved [147784736/147784736]
+
+FINISHED --2025-01-19 09:45:50--
+Total wall clock time: 6m 25s
+Downloaded: 2 files, 259M in 6m 19s (700 KB/s)
+root@Bhavishyagowda:~# !bash Miniconda3-latest-Linux-x86_64.sh -bfp /usr/local
+bash Miniconda3-latest-Linux-x86_64.sh -bfp /usr/local
+PREFIX=/usr/local
+Unpacking payload ...
+
+Installing base environment...
+
+Preparing transaction: ...working... done
+Executing transaction: ...working... done
+installation finished.
+
+>>> import sys
+>>> sys.path.append('/usr/local/lib/python3.12/site-packages')
+>>> print(sys.path)
+['', '/usr/local/lib/python312.zip', '/usr/local/lib/python3.12', '/usr/local/lib/python3.12/lib-dynload', '/usr/local/lib/python3.12/site-packages', '/usr/local/lib/python3.12/site-packages', '/usr/local/lib/python3.12/site-packages']
+
+# Installing FastQC
+root@Bhavishyagowda:~# #Install Fastqc
+root@Bhavishyagowda:~# conda install -c bioconda fastqc -y
+
+Retrieving notices: ...working... done
+Channels:
+ - bioconda
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /root/miniconda3
+
+  added / updated specs:
+    - fastqc
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    ca-certificates-2024.12.31 |       h06a4308_0         128 KB
+    certifi-2024.12.14         |  py312h06a4308_0         161 KB
+    conda-24.11.3              |  py312h06a4308_0         1.1 MB
+    frozendict-2.4.2           |  py312h06a4308_0          36 KB
+    openssl-3.0.15             |       h5eee18b_0         5.2 MB
+    ------------------------------------------------------------
+                                           Total:         6.7 MB
+
+The following NEW packages will be INSTALLED:
+
+  frozendict         pkgs/main/linux-64::frozendict-2.4.2-py312h06a4308_0
+
+The following packages will be UPDATED:
+
+  ca-certificates                      2024.3.11-h06a4308_0 --> 2024.12.31-h06a4308_0
+  certifi                          2024.2.2-py312h06a4308_0 --> 2024.12.14-py312h06a4308_0
+  conda                              24.3.0-py312h06a4308_0 --> 24.11.3-py312h06a4308_0
+  openssl                                 3.0.13-h7f8727e_0 --> 3.0.15-h5eee18b_0
+
+
+
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+
+# Installing Trimmomatic 
+root@Bhavishyagowda:~# conda install -c bioconda trimmomatic
+
+/root/miniconda3/lib/python3.12/site-packages/conda/base/context.py:201: FutureWarning: Adding 'defaults' to channel list implicitly is deprecated and will be removed in 25.3.
+
+To remove this warning, please choose a default channel explicitly with conda's regular configuration system, e.g. by adding 'defaults' to the list of channels:
+
+  conda config --add channels defaults
+
+For more information see https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html
+
+  deprecated.topic(
+/root/miniconda3/lib/python3.12/site-packages/conda/base/context.py:201: FutureWarning: Adding 'defaults' to channel list implicitly is deprecated and will be removed in 25.3.
+
+To remove this warning, please choose a default channel explicitly with conda's regular configuration system, e.g. by adding 'defaults' to the list of channels:
+
+  conda config --add channels defaults
+
+For more information see https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html
+
+  deprecated.topic(
+Channels:
+ - bioconda
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /root/miniconda3
+
+  added / updated specs:
+    - trimmomatic
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    trimmomatic-0.39           |       hdfd78af_2         144 KB  bioconda
+    ------------------------------------------------------------
+                                           Total:         144 KB
+
+The following NEW packages will be INSTALLED:
+
+  trimmomatic        bioconda/noarch::trimmomatic-0.39-hdfd78af_2
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+
+#We need to download fastq sequence for analysis. We can download it from site or using sra-toolkit.
+root@Bhavishyagowda:~# sudo apt-get install -y sra-toolkit
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  blends-common libfuse2 libkdf5-2 libmbedcrypto7 libmbedtls-dev libmbedtls14 libmbedx509-1 libncbi-vdb2 libncbi-wvdb2 med-config menu
+Suggested packages:
+  blends-doc libmbedtls-doc menu-l10n gksu | kde-runtime | ktsuss
+The following NEW packages will be installed:
+  blends-common libfuse2 libkdf5-2 libmbedcrypto7 libmbedtls-dev libmbedtls14 libmbedx509-1 libncbi-vdb2 libncbi-wvdb2 med-config menu sra-toolkit
+0 upgraded, 12 newly installed, 0 to remove and 40 not upgraded.
+Need to get 9342 kB of archives.
+After this operation, 27.8 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy/universe amd64 menu amd64 2.1.47ubuntu4 [354 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/universe amd64 blends-common all 0.7.4ubuntu1 [15.9 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libfuse2 amd64 2.9.9-5ubuntu3 [90.3 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libmbedcrypto7 amd64 2.28.0-1build1 [204 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libmbedx509-1 amd64 2.28.0-1build1 [47.2 kB]
+Get:6 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libmbedtls14 amd64 2.28.0-1build1 [82.7 kB]
+Get:7 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libmbedtls-dev amd64 2.28.0-1build1 [629 kB]
+Get:8 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libkdf5-2 amd64 2.11.2+dfsg-4build2 [14.7 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libncbi-vdb2 amd64 2.11.2+dfsg-4build2 [1364 kB]
+Get:10 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libncbi-wvdb2 amd64 2.11.2+dfsg-4build2 [1252 kB]
+Get:11 http://archive.ubuntu.com/ubuntu jammy/universe amd64 sra-toolkit amd64 2.11.3+dfsg-1ubuntu1 [5277 kB]
+Get:12 http://archive.ubuntu.com/ubuntu jammy/universe amd64 med-config all 3.7.1 [11.6 kB]
+Fetched 9342 kB in 6s (1490 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package menu.
+(Reading database ... 111849 files and directories currently installed.)
+Preparing to unpack .../00-menu_2.1.47ubuntu4_amd64.deb ...
+Unpacking menu (2.1.47ubuntu4) ...
+Selecting previously unselected package blends-common.
+Preparing to unpack .../01-blends-common_0.7.4ubuntu1_all.deb ...
+Unpacking blends-common (0.7.4ubuntu1) ...
+Selecting previously unselected package libfuse2:amd64.
+Preparing to unpack .../02-libfuse2_2.9.9-5ubuntu3_amd64.deb ...
+Unpacking libfuse2:amd64 (2.9.9-5ubuntu3) ...
+Selecting previously unselected package libmbedcrypto7:amd64.
+Preparing to unpack .../03-libmbedcrypto7_2.28.0-1build1_amd64.deb ...
+Unpacking libmbedcrypto7:amd64 (2.28.0-1build1) ...
+Selecting previously unselected package libmbedx509-1:amd64.
+Preparing to unpack .../04-libmbedx509-1_2.28.0-1build1_amd64.deb ...
+Unpacking libmbedx509-1:amd64 (2.28.0-1build1) ...
+Selecting previously unselected package libmbedtls14:amd64.
+Preparing to unpack .../05-libmbedtls14_2.28.0-1build1_amd64.deb ...
+Unpacking libmbedtls14:amd64 (2.28.0-1build1) ...
+Selecting previously unselected package libmbedtls-dev:amd64.
+Preparing to unpack .../06-libmbedtls-dev_2.28.0-1build1_amd64.deb ...
+Unpacking libmbedtls-dev:amd64 (2.28.0-1build1) ...
+Selecting previously unselected package libkdf5-2.
+Preparing to unpack .../07-libkdf5-2_2.11.2+dfsg-4build2_amd64.deb ...
+Unpacking libkdf5-2 (2.11.2+dfsg-4build2) ...
+Selecting previously unselected package libncbi-vdb2.
+Preparing to unpack .../08-libncbi-vdb2_2.11.2+dfsg-4build2_amd64.deb ...
+Unpacking libncbi-vdb2 (2.11.2+dfsg-4build2) ...
+Selecting previously unselected package libncbi-wvdb2.
+Preparing to unpack .../09-libncbi-wvdb2_2.11.2+dfsg-4build2_amd64.deb ...
+Unpacking libncbi-wvdb2 (2.11.2+dfsg-4build2) ...
+Selecting previously unselected package sra-toolkit.
+Preparing to unpack .../10-sra-toolkit_2.11.3+dfsg-1ubuntu1_amd64.deb ...
+Unpacking sra-toolkit (2.11.3+dfsg-1ubuntu1) ...
+Selecting previously unselected package med-config.
+Preparing to unpack .../11-med-config_3.7.1_all.deb ...
+Unpacking med-config (3.7.1) ...
+Setting up libfuse2:amd64 (2.9.9-5ubuntu3) ...
+Setting up libmbedcrypto7:amd64 (2.28.0-1build1) ...
+Setting up menu (2.1.47ubuntu4) ...
+Setting up blends-common (0.7.4ubuntu1) ...
+Setting up med-config (3.7.1) ...
+Adding group `med' (GID 117) ...
+Done.
+Setting up libmbedx509-1:amd64 (2.28.0-1build1) ...
+Setting up libmbedtls14:amd64 (2.28.0-1build1) ...
+Setting up libmbedtls-dev:amd64 (2.28.0-1build1) ...
+Setting up libncbi-vdb2 (2.11.2+dfsg-4build2) ...
+Setting up libkdf5-2 (2.11.2+dfsg-4build2) ...
+Setting up libncbi-wvdb2 (2.11.2+dfsg-4build2) ...
+Setting up sra-toolkit (2.11.3+dfsg-1ubuntu1) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for install-info (6.8-4build1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.7) ...
+Processing triggers for menu (2.1.47ubuntu4) ...
+
+root@Bhavishyagowda:~# fastq-dump --split-files --gzip --outdir /content/fastq_filesdump --outdir /content/fastq_files --gzip --skip-technical --readids --dumpbase --split-files SRR2585751
+Read 425179 spots for SRR2585751
+Written 425179 spots for SRR2585751
+
+# Install Kraken2
+root@Bhavishyagowda:~# conda install -c bioconda kraken2 -y
+/root/miniconda3/lib/python3.12/site-packages/conda/base/context.py:201: FutureWarning: Adding 'defaults' to channel list implicitly is deprecated and will be removed in 25.3.
+
+To remove this warning, please choose a default channel explicitly with conda's regular configuration system, e.g. by adding 'defaults' to the list of channels:
+
+  conda config --add channels defaults
+
+For more information see https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html
+
+  deprecated.topic(
+/root/miniconda3/lib/python3.12/site-packages/conda/base/context.py:201: FutureWarning: Adding 'defaults' to channel list implicitly is deprecated and will be removed in 25.3.
+
+To remove this warning, please choose a default channel explicitly with conda's regular configuration system, e.g. by adding 'defaults' to the list of channels:
+
+  conda config --add channels defaults
+
+For more information see https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html
+
+  deprecated.topic(
+Channels:
+ - bioconda
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /root/miniconda3
+
+  added / updated specs:
+    - kraken2
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    blast-2.5.0                |       hc0b0e79_3       137.8 MB  bioconda
+    boost-1.82.0               |  py312h06a4308_2          11 KB
+    kraken2-2.0.8_beta         |  pl526h6bb024c_0         132 KB  bioconda
+    libboost-1.82.0            |       h109eef0_2        19.5 MB
+    popt-1.19                  |       h5eee18b_0         193 KB
+    py-boost-1.82.0            |  py312h6db74b5_2         324 KB
+    rsync-3.3.0                |       hc9e6f67_0         348 KB
+    wget-1.24.5                |       h251f7ec_0         825 KB
+    xxhash-0.8.0               |       h7f8727e_3          83 KB
+    ------------------------------------------------------------
+                                           Total:       159.2 MB
+
+The following NEW packages will be INSTALLED:
+
+  blast              bioconda/linux-64::blast-2.5.0-hc0b0e79_3
+  boost              pkgs/main/linux-64::boost-1.82.0-py312h06a4308_2
+  kraken2            bioconda/linux-64::kraken2-2.0.8_beta-pl526h6bb024c_0
+  libboost           pkgs/main/linux-64::libboost-1.82.0-h109eef0_2
+  libidn2            pkgs/main/linux-64::libidn2-2.3.4-h5eee18b_0
+  libunistring       pkgs/main/linux-64::libunistring-0.9.10-h27cfd23_0
+  popt               pkgs/main/linux-64::popt-1.19-h5eee18b_0
+  py-boost           pkgs/main/linux-64::py-boost-1.82.0-py312h6db74b5_2
+  rsync              pkgs/main/linux-64::rsync-3.3.0-hc9e6f67_0
+  wget               pkgs/main/linux-64::wget-1.24.5-h251f7ec_0
+  xxhash             pkgs/main/linux-64::xxhash-0.8.0-h7f8727e_3
+
+The following packages will be DOWNGRADED:
+
+  perl                                    5.34.0-h5eee18b_2 --> 5.26.2-h14c3975_0
+
+
+
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+
+# RUNNING FASTQC 
+root@Bhavishyagowda:~# fastqc '/content/fastq_files/SRR2585751_1.fastq.gz' '/content/fastq_files/SRR2585751_2.fastq.gz' -o '/content/fastqc_output'
+Started analysis of SRR2585751_1.fastq.gz
+Approx 5% complete for SRR2585751_1.fastq.gz
+Approx 10% complete for SRR2585751_1.fastq.gz
+Approx 15% complete for SRR2585751_1.fastq.gz
+Approx 20% complete for SRR2585751_1.fastq.gz
+Approx 25% complete for SRR2585751_1.fastq.gz
+Approx 30% complete for SRR2585751_1.fastq.gz
+Approx 35% complete for SRR2585751_1.fastq.gz
+Approx 40% complete for SRR2585751_1.fastq.gz
+Approx 45% complete for SRR2585751_1.fastq.gz
+Approx 50% complete for SRR2585751_1.fastq.gz
+Approx 55% complete for SRR2585751_1.fastq.gz
+Approx 60% complete for SRR2585751_1.fastq.gz
+Approx 65% complete for SRR2585751_1.fastq.gz
+Approx 70% complete for SRR2585751_1.fastq.gz
+Approx 75% complete for SRR2585751_1.fastq.gz
+Approx 80% complete for SRR2585751_1.fastq.gz
+Approx 85% complete for SRR2585751_1.fastq.gz
+Approx 90% complete for SRR2585751_1.fastq.gz
+Approx 95% complete for SRR2585751_1.fastq.gz
+Analysis complete for SRR2585751_1.fastq.gz
+Started analysis of SRR2585751_2.fastq.gz
+Approx 5% complete for SRR2585751_2.fastq.gz
+Approx 10% complete for SRR2585751_2.fastq.gz
+Approx 15% complete for SRR2585751_2.fastq.gz
+Approx 20% complete for SRR2585751_2.fastq.gz
+Approx 25% complete for SRR2585751_2.fastq.gz
+Approx 30% complete for SRR2585751_2.fastq.gz
+Approx 35% complete for SRR2585751_2.fastq.gz
+Approx 40% complete for SRR2585751_2.fastq.gz
+Approx 45% complete for SRR2585751_2.fastq.gz
+Approx 50% complete for SRR2585751_2.fastq.gz
+Approx 55% complete for SRR2585751_2.fastq.gz
+Approx 60% complete for SRR2585751_2.fastq.gz
+Approx 65% complete for SRR2585751_2.fastq.gz
+Approx 70% complete for SRR2585751_2.fastq.gz
+Approx 75% complete for SRR2585751_2.fastq.gz
+Approx 80% complete for SRR2585751_2.fastq.gz
+Approx 85% complete for SRR2585751_2.fastq.gz
+Approx 90% complete for SRR2585751_2.fastq.gz
+Approx 95% complete for SRR2585751_2.fastq.gz
+Analysis complete for SRR2585751_2.fastq.gz
+
+root@Bhavishyagowda:~# ls /content/fastqc_output
+SRR2585751_1_fastqc.html  SRR2585751_1_fastqc.zip  SRR2585751_2_fastqc.html  SRR2585751_2_fastqc.zip
+
+# To open html file we need to import HTML, download the .html files to local disk and open in browser anc check different parameters.
+Trimming: To trim sequences for low-quality nucleotides, adapters, and primers, we need to install the Trimmomatic tool. Alternatively, you can use other tools like Cutadapt. Since Cutadapt requires Python version 3.4 or higher, we will create a new Conda environment and install Trim Galore instead.
+
+root@Bhavishyagowda:~# conda activate base
+(base) root@Bhavishyagowda:~# /root/miniconda3/bin/trimmomatic PE '/content/fastq_files/SRR2585751_1.fastq.gz' '/content/fastq_files/SRR2585751_2.fastq.gz' output_forward_paired.fastq.gz output_forward_unpaired.fastq.gz output_reverse_paired.fastq.gz output_reverse_unpaired.fastq.gz ILLUMINACLIP:adapters.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+TrimmomaticPE: Started with arguments:
+/content/fastq_files/SRR2585751_1.fastq.gz /content/fastq_files/SRR2585751_2.fastq.gz output_forward_paired.fastq.gz output_forward_unpaired.fastq.gz output_reverse_paired.fastq.gz output_reverse_unpaired.fastq.gz ILLUMINACLIP:adapters.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+Multiple cores found: Using 4 threads
+java.io.FileNotFoundException: /root/adapters.fa (No such file or directory)
+        at java.base/java.io.FileInputStream.open0(Native Method)
+        at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+        at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+        at org.usadellab.trimmomatic.fasta.FastaParser.parse(FastaParser.java:54)
+        at org.usadellab.trimmomatic.trim.IlluminaClippingTrimmer.loadSequences(IlluminaClippingTrimmer.java:110)
+        at org.usadellab.trimmomatic.trim.IlluminaClippingTrimmer.makeIlluminaClippingTrimmer(IlluminaClippingTrimmer.java:71)
+        at org.usadellab.trimmomatic.trim.TrimmerFactory.makeTrimmer(TrimmerFactory.java:32)
+        at org.usadellab.trimmomatic.Trimmomatic.createTrimmers(Trimmomatic.java:59)
+        at org.usadellab.trimmomatic.TrimmomaticPE.run(TrimmomaticPE.java:552)
+        at org.usadellab.trimmomatic.Trimmomatic.main(Trimmomatic.java:80)
+Quality encoding detected as phred33
+Input Read Pairs: 425179 Both Surviving: 419429 (98.65%) Forward Only Surviving: 4016 (0.94%) Reverse Only Surviving: 1088 (0.26%) Dropped: 646 (0.15%)
+TrimmomaticPE: Completed successfully
+
+The output from Trimmomatic provides detailed information about the trimming process and the resulting read pairs. Here’s how to interpret it:
+
+Quality Encoding: Trimmomatic identifies the quality encoding format used in your input FASTQ files. Phred33 is typically used for Illumina sequencing data.
+
+Input Read Pairs: This represents the total number of read pairs in your input FASTQ files.
+
+Both Surviving: This indicates the number and percentage of read pairs where both the forward and reverse reads successfully passed the trimming process. These are the read pairs that were retained.
+
+Forward Only Surviving: This shows the number and percentage of read pairs where only the forward read passed the trimming process. These pairs are retained, but the reverse reads were discarded.
+
+Reverse Only Surviving: This shows the number and percentage of read pairs where only the reverse read passed the trimming process. These pairs are retained, but the forward reads were discarded.
+
+Dropped: This represents the number and percentage of read pairs that were discarded during the trimming process.
+
+In your case, the trimming was successful, with the majority of read pairs (98.65%) retaining both the forward and reverse reads. A small percentage of read pairs had one of the reads discarded.
+
+Taxonomical classification Kraken2 is a powerful tool used for taxonomic classification of DNA sequences, particularly in metagenomic studies where the source of the sequences is a complex mixture of different organisms. Kraken2 employs a k-mer-based approach to classify sequences, which allows it to achieve high sensitivity and specificity in taxonomic classification, even with short sequence reads. Overall, Kraken2 is a valuable tool for studying microbial communities in various environments, including soil, water, human gut, and more, providing insights into the composition and diversity of these complex ecosystems.
+
+(base) root@Bhavishyagowda:~# wget -c https://genome-idx.s3.amazonaws.com/kraken/k2_viral_20231009.tar.gz
+--2025-01-20 14:59:51--  https://genome-idx.s3.amazonaws.com/kraken/k2_viral_20231009.tar.gz
+Resolving genome-idx.s3.amazonaws.com (genome-idx.s3.amazonaws.com)... 3.5.28.111, 3.5.29.150, 52.217.42.180, ...
+Connecting to genome-idx.s3.amazonaws.com (genome-idx.s3.amazonaws.com)|3.5.28.111|:443... connected.
+HTTP request sent, awaiting response... 206 Partial Content
+Length: 506414133 (483M), 147652142 (141M) remaining [application/x-tar]
+Saving to: ‘k2_viral_20231009.tar.gz’
+​
+k2_viral_20231009.tar.gz               100%[++++++++++++++++++++++++++++++++++++++++++++++++++++++======================>] 482.95M  1.05MB/s    in 2m 58s
+​
+2025-01-20 15:02:50 (810 KB/s) - ‘k2_viral_20231009.tar.gz’ saved [506414133/506414133]
+
+(base) root@Bhavishyagowda:~# mkdir kraken_viral_db
+(base) root@Bhavishyagowda:~# tar -zxvf k2_viral_20231009.tar.gz -C kraken_viral_db
+hash.k2d
+opts.k2d
+taxo.k2d
+seqid2taxid.map
+inspect.txt
+database100mers.kmer_distrib
+database150mers.kmer_distrib
+database200mers.kmer_distrib
+database250mers.kmer_distrib
+database300mers.kmer_distrib
+database50mers.kmer_distrib
+database75mers.kmer_distrib
+ktaxonomy.tsv
+library_report.tsv
+
+(base) root@Bhavishyagowda:~# ls -lhrt /root/kraken_viral_db
+total 633M
+-rw-r--r-- 1 root root 733K Oct  5  2023 seqid2taxid.map
+-rw-r--r-- 1 root root 2.1M Oct  5  2023 taxo.k2d
+-rw-r--r-- 1 root root 619M Oct  5  2023 hash.k2d
+-rw-r--r-- 1 root root   64 Oct  5  2023 opts.k2d
+-rw-r--r-- 1 root root 1.7M Oct  5  2023 inspect.txt
+-rw-r--r-- 1 root root 1.4M Oct  5  2023 ktaxonomy.tsv
+-rw-r--r-- 1 root root 877K Oct  5  2023 database50mers.kmer_distrib
+-rw-r--r-- 1 root root 795K Oct  5  2023 database75mers.kmer_distrib
+-rw-r--r-- 1 root root 730K Oct  5  2023 database100mers.kmer_distrib
+-rw-r--r-- 1 root root 637K Oct  5  2023 database150mers.kmer_distrib
+-rw-r--r-- 1 root root 586K Oct  5  2023 database200mers.kmer_distrib
+-rw-r--r-- 1 root root 559K Oct  5  2023 database250mers.kmer_distrib
+-rw-r--r-- 1 root root 3.9M Oct  5  2023 library_report.tsv
+-rw-r--r-- 1 root root 543K Oct  5  2023 database300mers.kmer_distrib
+
+(base) root@Bhavishyagowda:~# kraken2 --db '/root/kraken_viral_db' --paired '/root/output_forward_unpaired.fastq.gz' '/root/output_reverse_unpaired.fastq.gz
+' > kraken_output --report kraken_report
+Loading database information... done.
+1088 sequences (0.36 Mbp) processed in 0.077s (852.9 Kseq/m, 283.16 Mbp/m).
+  14 sequences classified (1.29%)
+  1074 sequences unclassified (98.71%)
+
+# Here since the database is not related to the query sequence we got only 14 sequences classified. If we used correct database i.e minusB (size: 6.5GB) we could have got an output file which can be used for further analysis.
